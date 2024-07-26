@@ -1,0 +1,32 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    height: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.status-lights .light {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.alarm[data-status="on"], .buzzer[data-status="on"] { background-color: red; }
+.alarm[data-status="off"], .buzzer[data-status="off"] { background-color: green; }

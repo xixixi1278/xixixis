@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>能源开关控制及报警</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>能源开关控制及报警</h1>
+            <div class="status-lights">
+                <div class="light alarm" id="alarmLight" data-status="off"></div>
+                <div class="light buzzer" id="buzzerLight" data-status="off"></div>
+            </div>
+        </header>
+        <main>
+            <section class="data-display">
+                <div class="data-row">
+                    <span>温度:</span> <span id="temperatureDisplay">--</span>°C
+                    <span>面积:</span> <span id="areaDisplay">--</span>cm²
+                </div>
+                <div class="data-row">
+                    <span>水能源:</span> <span id="waterSwitchStatus">关闭</span>
+                    <span>电能源:</span> <span id="electricSwitchStatus">关闭</span>
+                </div>
+                <div class="data-row">
+                    <span>警示灯:</span> <span id="alarmStatus">不工作</span>
+                    <span>蜂鸣器:</span> <span id="buzzerStatus">不工作</span>
+                </div>
+                <div class="data-row">
+                    <span>室内人数:</span> <span id="peopleCountDisplay">0</span>
+                </div>
+            </section>
+            <section class="controls">
+                <div>
+                    <label>面积1设定(cm²):</label>
+                    <input type="number" id="areaThreshold1Input" value="100">
+                </div>
+                <div>
+                    <label>面积2设定(cm²):</label>
+                    <input type="number" id="areaThreshold2Input" value="200">
+                </div>
+                <div>
+                    <label>温度设定(°C):</label>
+                    <input type="number" id="temperatureThresholdInput" value="30">
+                </div>
+                <div>
+                    <label><input type="checkbox" id="simulationToggle" onclick="toggleSimulation()"> 开启模拟数据</label>
+                </div>
+                <div>
+                    <label>水能源开关:</label>
+                    <input type="checkbox" id="waterSwitchCheckbox" onchange="handleEnergySwitch('water')">
+                </div>
+                <div>
+                    <label>电能源开关:</label>
+                    <input type="checkbox" id="electricSwitchCheckbox" onchange="handleEnergySwitch('electric')">
+                </div>
+                <div>
+                    <label>开关打开时间:</label>
+                    <input type="time" id="switchOnTimeInput">
+                </div>
+                <div>
+                    <label>开关关闭时间:</label>
+                    <input type="time" id="switchOffTimeInput">
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
